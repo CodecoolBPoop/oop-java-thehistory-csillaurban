@@ -15,7 +15,9 @@ public class TheHistoryArrayList implements TheHistory {
     @Override
     public void add(String text) {
         //TODO: check the TheHistory interface for more information
-        wordsArrayList = new ArrayList<>(Arrays.asList(text.split(" ")));
+        List<String> textAsList = Arrays.asList(text.split(" "));
+        wordsArrayList.addAll(textAsList);
+
     }
 
     @Override

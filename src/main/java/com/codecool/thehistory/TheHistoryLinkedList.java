@@ -15,7 +15,8 @@ public class TheHistoryLinkedList implements TheHistory {
     @Override
     public void add(String text) {
         //TODO: check the TheHistory interface for more information
-        wordsLinkedList = new LinkedList<>(Arrays.asList(text.split(" ")));
+        List<String> textAsList = Arrays.asList(text.split(" "));
+        wordsLinkedList.addAll(textAsList);
     }
 
     @Override
