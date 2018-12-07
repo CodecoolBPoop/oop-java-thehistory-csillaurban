@@ -23,7 +23,7 @@ public class TheHistoryArray implements TheHistory {
     public void removeWord(String wordToBeRemoved) {
         //TODO: check the TheHistory interface for more information
 
-        String textAsString = String.join(" ", wordsArray) + " ";
+        String textAsString = toString() + " ";
         String wordRemove = textAsString.replaceAll(wordToBeRemoved + " ", "").trim();
         wordsArray = wordRemove.split(" ");
     }
@@ -44,7 +44,7 @@ public class TheHistoryArray implements TheHistory {
     @Override
     public void replaceOneWord(String from, String to) {
         //TODO: check the TheHistory interface for more information
-        String textAsString = String.join(" ", wordsArray);
+        String textAsString = toString();
         String textWithReplace = textAsString.replaceAll(from, to);
         wordsArray = textWithReplace.split(" ");
     }
@@ -54,7 +54,7 @@ public class TheHistoryArray implements TheHistory {
         //TODO: check the TheHistory interface for more information
         String from = String.join(" ", fromWords).trim();
         String to = String.join(" ", toWords).trim();
-        String textAsString = String.join(" ", wordsArray);
+        String textAsString = toString();
         String textWithReplaceWords = textAsString.replaceAll(from, to);
         wordsArray = textWithReplaceWords.split(" ");
     }

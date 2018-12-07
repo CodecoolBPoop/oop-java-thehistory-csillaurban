@@ -53,7 +53,7 @@ public class TheHistoryLinkedList implements TheHistory {
         //TODO: check the TheHistory interface for more information
         String from = String.join(" ", fromWords).trim();
         String to = String.join(" ", toWords).trim();
-        String arrayAsString = String.join(" ", wordsLinkedList);
+        String arrayAsString = toString();
         String textWithReplacedWords = arrayAsString.replaceAll(from, to);
         wordsLinkedList = new LinkedList<>(Arrays.asList(textWithReplacedWords.split(" ")));
     }

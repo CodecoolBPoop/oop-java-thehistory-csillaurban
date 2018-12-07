@@ -54,7 +54,7 @@ public class TheHistoryArrayList implements TheHistory {
         //TODO: check the TheHistory interface for more information
         String from = String.join(" ", fromWords).trim();
         String to = String.join(" ", toWords).trim();
-        String arrayAsString = String.join(" ", wordsArrayList);
+        String arrayAsString = toString();
         String textWithReplacedWords = arrayAsString.replaceAll(from, to);
         wordsArrayList = new ArrayList<>(Arrays.asList(textWithReplacedWords.split(" ")));
 }
