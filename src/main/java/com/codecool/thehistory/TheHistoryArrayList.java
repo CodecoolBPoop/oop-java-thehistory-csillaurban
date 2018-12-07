@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Arrays;
 
 public class TheHistoryArrayList implements TheHistory {
     /**
@@ -14,33 +15,50 @@ public class TheHistoryArrayList implements TheHistory {
     @Override
     public void add(String text) {
         //TODO: check the TheHistory interface for more information
+        wordsArrayList = new ArrayList<>(Arrays.asList(text.split(" ")));
     }
 
     @Override
     public void removeWord(String wordToBeRemoved) {
         //TODO: check the TheHistory interface for more information
+        ListIterator<String> iterator = wordsArrayList.listIterator();
+        while (iterator.hasNext()) {
+            String word = iterator.next();
+            if(word.equals(wordToBeRemoved)) {
+                iterator.remove();
+            }
+        }
     }
 
     @Override
     public int size() {
         //TODO: check the TheHistory interface for more information
-        return 0;
+        return wordsArrayList.size();
     }
 
     @Override
     public void clear() {
         //TODO: check the TheHistory interface for more information
+
+        wordsArrayList.clear();
     }
 
     @Override
     public void replaceOneWord(String from, String to) {
         //TODO: check the TheHistory interface for more information
+        Collections.replaceAll(wordsArrayList, from, to);
     }
 
     @Override
     public void replaceMoreWords(String[] fromWords, String[] toWords) {
         //TODO: check the TheHistory interface for more information
-    }
+        String from = String.join(" ", fromWords).trim();
+        String to = String.join(" ", toWords).trim();
+        String arrayAsString = String.join(" ", wordsArrayList);
+        String textWithReplacedWords = arrayAsString.replaceAll(from, to);
+        wordsArrayList = new ArrayList<>(Arrays.asList(textWithReplacedWords.split(" ")));
+}
+
 
     @Override
     public String toString() {
